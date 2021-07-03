@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AddAddress</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">WebTest</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AddAddress (WebTest)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddAddress</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 33)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package WebTest;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.junit.Test;
+<i>4</i>&nbsp;import org.openqa.selenium.By;
+<i>5</i>&nbsp;import org.openqa.selenium.WebDriver;
+<i>6</i>&nbsp;import org.openqa.selenium.chrome.ChromeDriver;
+<i>7</i>&nbsp;import org.openqa.selenium.support.ui.Select;
+<i>8</i>&nbsp;import org.openqa.selenium.support.ui.WebDriverWait;
+<i>9</i>&nbsp;import java.util.concurrent.TimeUnit;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;
+<b class="nc"><i>12</i>&nbsp;public class AddAddress {</b>
+<i>13</i>&nbsp;    @Test
+<i>14</i>&nbsp;    public void address() throws InterruptedException
+<i>15</i>&nbsp;    {
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;        WebDriver driver;
+<i>18</i>&nbsp;        WebDriverWait wait;
+<b class="nc"><i>19</i>&nbsp;        System.setProperty(&quot;webdriver.chrome.driver&quot;, &quot;chromedriver2.exe&quot;);</b>
+<b class="nc"><i>20</i>&nbsp;        driver = new ChromeDriver();</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);</b>
+<b class="nc"><i>23</i>&nbsp;        wait = new WebDriverWait(driver, 10);</b>
+<b class="nc"><i>24</i>&nbsp;        driver.manage().window().maximize();</b>
+<b class="nc"><i>25</i>&nbsp;        driver.get(&quot;http://103.226.139.66:8080/en/&quot;);</b>
+<i>26</i>&nbsp;
+<b class="nc"><i>27</i>&nbsp;        driver.findElement(By.xpath(&quot;//*[@class=\&quot;hide_xs\&quot;]&quot;)).click();</b>
+<b class="nc"><i>28</i>&nbsp;        driver.findElement(By.id(&quot;email&quot;)).sendKeys(&quot;arieh@gmail.com&quot;);</b>
+<b class="nc"><i>29</i>&nbsp;        driver.findElement(By.id(&quot;passwd&quot;)).sendKeys(&quot;arie2929&quot;);</b>
+<i>30</i>&nbsp;        //
+<b class="nc"><i>31</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>32</i>&nbsp;        driver.findElement(By.id(&quot;SubmitLogin&quot;)).click();</b>
+<b class="nc"><i>33</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>34</i>&nbsp;        driver.findElement(By.className(&quot;icon-building&quot;)).click();</b>
+<b class="nc"><i>35</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>36</i>&nbsp;        driver.findElement(By.id(&quot;company&quot;)).sendKeys(&quot;MoneyfyClub&quot;);</b>
+<i>37</i>&nbsp;
+<b class="nc"><i>38</i>&nbsp;        driver.findElement(By.id(&quot;address1&quot;)).sendKeys(&quot;Jalan.Kalimalang no 2&quot;);</b>
+<b class="nc"><i>39</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>40</i>&nbsp;        driver.findElement(By.id(&quot;postcode&quot;)).sendKeys(&quot;12018&quot;);</b>
+<b class="nc"><i>41</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>42</i>&nbsp;        driver.findElement(By.id(&quot;city&quot;)).sendKeys(&quot;Jakarta&quot;);</b>
+<b class="nc"><i>43</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>44</i>&nbsp;        Select idstate = new Select(driver.findElement(By.id(&quot;id_state&quot;)));</b>
+<b class="nc"><i>45</i>&nbsp;        idstate.selectByValue(&quot;318&quot;);</b>
+<b class="nc"><i>46</i>&nbsp;        Select idcountry = new Select(driver.findElement(By.id(&quot;id_country&quot;)));</b>
+<b class="nc"><i>47</i>&nbsp;        idcountry.selectByValue(&quot;111&quot;);</b>
+<b class="nc"><i>48</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>49</i>&nbsp;        driver.findElement(By.id(&quot;phone&quot;)).sendKeys(&quot;021892882&quot;);</b>
+<b class="nc"><i>50</i>&nbsp;        Thread.sleep(1000);</b>
+<b class="nc"><i>51</i>&nbsp;        driver.findElement(By.id(&quot;phone_mobile&quot;)).sendKeys(&quot;0821829102&quot;);</b>
+<b class="nc"><i>52</i>&nbsp;        driver.findElement(By.id(&quot;alias&quot;)).click();</b>
+<b class="nc"><i>53</i>&nbsp;        driver.findElement(By.id(&quot;submitAddress&quot;)).click();</b>
+<b class="nc"><i>54</i>&nbsp;        Thread.sleep(1000);</b>
+<i>55</i>&nbsp;        //driver.quit();
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;}
+<i>58</i>&nbsp;//  Click Element    class=icon-building
+<i>59</i>&nbsp;//    Input Text    company    PT.INDONESIA
+<i>60</i>&nbsp;//        Input Text    address1    Jalan.Kalimalang No.2
+<i>61</i>&nbsp;//        Input Text    postcode    12018
+<i>62</i>&nbsp;//        Input Text    city    Jakarta
+<i>63</i>&nbsp;//        Sleep    1
+<i>64</i>&nbsp;//        Select From List by Value    //*[@id=&quot;id_state&quot;]    318
+<i>65</i>&nbsp;//        Select From List by Value    //*[@id=&quot;id_country&quot;]    111
+<i>66</i>&nbsp;//        Input Text    phone    021912938
+<i>67</i>&nbsp;//        Input Text    phone_mobile    08128332888
+<i>68</i>&nbsp;//        Click Element    alias
+<i>69</i>&nbsp;//        Click Button    submitAddress
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-07-03 05:42</div>
+</div>
+</body>
+</html>
